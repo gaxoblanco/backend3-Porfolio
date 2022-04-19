@@ -31,7 +31,9 @@ class SkillServices {
   };
 //pasamos los skills que tenemos
   async find(){
-    return this.skills;
+    const query = 'select * from tasks';
+    const rta = await this.pool.query(query);
+    return rta.rows;
   };
 //llamamos 1
   async findOne(id){
